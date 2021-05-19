@@ -1,9 +1,13 @@
+<html>
 <body>
 <script>
-    (function() {
+    (function () {
+        window.parent.postMessage("hallo", '*');
         if (!window.parent) return;
         var msg = /s=1/.test(document.cookie) ? '3pc.supported' : '3pc.unsupported';
         window.parent.postMessage(msg, '*');
+        top.postMessage("hi","*")
     })();
 </script>
 </body>
+</html>
